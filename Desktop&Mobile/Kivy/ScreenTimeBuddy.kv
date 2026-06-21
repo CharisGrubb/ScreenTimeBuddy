@@ -1,10 +1,32 @@
-<MainWidget>:
-    canvas:
-        Rectangle:
-            pos: self.center_x-5,0
-            size: 10, self.height
+<Title>:
     Label:
-        font_size:70
-        center_x: root.width/4
-        top: root.top - 50 
+        font_size:50
+        center_x: root.width/2
+        top: root.top - 20 
         text: "Screen Time Buddy"
+
+<SlidingStringSetting>:
+    orientation: 'vertical'
+    padding: 20
+    
+    TabbedPanel:
+        do_default_tab: False
+        tab_pos: 'top_mid' 
+
+        TabbedPanelItem:
+            text: 'Acknowledge'
+            Label:
+                text: 'Pop up requiring you to acknowledge.'
+
+        TabbedPanelItem:
+            text: 'Blocking'
+            Label:
+                text: 'Blocks screen and activity forcing a break.'
+
+        TabbedPanelItem:
+            text: 'Notification'
+            Label:
+                text: 'Alert at temporarily displays at top or on side, can be ignored.'
+        
+      
+    
