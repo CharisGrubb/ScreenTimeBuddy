@@ -14,17 +14,23 @@
         tab_pos: 'top_mid' 
 
         TabbedPanelItem:
-            text: 'Acknowledge'
+            markup: True
+            text: '[b]Acknowledge[/b]' if self.state == 'down' else 'Acknowledge'
+            on_release: root.on_button_press()
             Label:
                 text: 'Pop up requiring you to acknowledge.'
 
         TabbedPanelItem:
-            text: 'Blocking'
+            markup: True
+            text: '[b]Blocking[/b]' if self.state == 'down' else 'Blocking'
+            on_release: root.on_button_press()
             Label:
                 text: 'Blocks screen and activity forcing a break.'
 
         TabbedPanelItem:
-            text: 'Notification'
+            markup: True
+            text: "[b]Notification[/b] "if self.state == 'down' else 'Notification'
+            on_release: root.on_button_press()
             Label:
                 text: 'Alert at temporarily displays at top or on side, can be ignored.'
         

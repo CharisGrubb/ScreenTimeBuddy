@@ -16,10 +16,11 @@ class SlidingStringSetting(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
      
-    def on_slider_value(self, instance, value):
-        # Convert the slider's float/int value to index into the string list
-        index = int(value)
-        self.current_setting = self.options[index]
+    def on_button_press(self):
+        print("Inside on button press")
+        current_index = self.options.index(self.current_setting)
+        next_index = (current_index + 1) % len(self.options)
+        self.current_setting = self.options[next_index]
 
 class Title(Label):
     def __init__(self, **kwargs):
