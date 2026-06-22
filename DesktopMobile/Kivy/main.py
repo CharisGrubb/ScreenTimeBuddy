@@ -6,6 +6,8 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.properties import NumericProperty, ReferenceListProperty, ListProperty, StringProperty
 from kivy.vector import Vector
+from DesktopMobile import Settings
+
 
 
 
@@ -17,10 +19,11 @@ class SlidingStringSetting(BoxLayout):
         super().__init__(**kwargs)
      
     def on_button_press(self):
-        print("Inside on button press")
+        
         current_index = self.options.index(self.current_setting)
         next_index = (current_index + 1) % len(self.options)
         self.current_setting = self.options[next_index]
+        # db.update_single_setting(user_id="Buddy", setting_key="alert_notification_preference", setting_value=self.current_setting)
 
 class Title(Label):
     def __init__(self, **kwargs):

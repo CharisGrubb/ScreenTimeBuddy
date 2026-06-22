@@ -1,2 +1,2 @@
-pymongo==4.14.0
 Kivy==2.3.1
+langchain-objectbox=0.1.0
